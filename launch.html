@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Context</title>
+</head>
+<body>
+    <h1>SMART on FHIR Launch Context</h1>
+    <p>Launch: <span id="launchValue"></span></p>
+    <p>Iss: <span id="issValue"></span></p>
+
+    <script>
+        // Parse the URL's query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Extract the launch and iss parameters
+        const launchContext = urlParams.get('launch');
+        const iss = urlParams.get('iss');
+
+        // Display the values on the page (or you can store/use them as needed)
+        document.getElementById('launchValue').textContent = launchContext;
+        document.getElementById('issValue').textContent = iss;
+
+        // Optionally, log them to the console for debugging
+        console.log('Launch Context:', launchContext);
+        console.log('Iss:', iss);
+    </script>
+</body>
+</html>
